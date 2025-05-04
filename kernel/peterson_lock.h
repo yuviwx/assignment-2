@@ -1,5 +1,5 @@
-#ifndef _PETERSONLOCK_H
-#define  _PETERSONLOCK_H
+#ifndef _PETERSON_LOCK_H
+#define  _PETERSON_LOCK_H
 // Peterson lock structure
 typedef struct  {
   int flags[2];      // Interest flags for each process

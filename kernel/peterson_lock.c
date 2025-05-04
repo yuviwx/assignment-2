@@ -1,4 +1,5 @@
 #include "peterson_lock.h"
+#include "proc.c"
 
 int locksCreated = 0; 
 
@@ -21,8 +22,8 @@ int peterson_create(void) {
             __sync_synchronize();
             return i;
         }
-        else return -1;
     }
+    return -1;
 }
 
 int peterson_acquire(int lock_id, int role){
@@ -54,6 +55,8 @@ int peterson_release(int lock_id, int role){
     }
     __sync_lock_release(&petersonLocks[lock_id].flags[role]);
     __sync_synchronize();
+
+    return 0;
 }
 
 int peterson_destroy(int lock_id) {

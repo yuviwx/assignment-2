@@ -6,10 +6,11 @@
         "peterson_lock.h": "c"
     },
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": false,
         "scminput": false,
-        "makefile": true
+        "makefile": true,
+        "c": false
     },
 }
