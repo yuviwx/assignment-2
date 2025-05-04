@@ -1,5 +1,13 @@
+#include "types.h"
+#include "param.h"
+#include "memlayout.h"
+#include "riscv.h"
+#include "spinlock.h"
+#include "proc.h"
+#include "defs.h"
 #include "peterson_lock.h"
-#include "proc.c"
+
+PetersonLock petersonLocks[MAX_PETERSON_LOCKS];
 
 int locksCreated = 0; 
 
