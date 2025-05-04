@@ -3,5 +3,13 @@
         "types.h": "c",
         "riscv.h": "c",
         "defs.h": "c",
+        "peterson_lock.h": "c"
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "makefile": true
     },
 }

@@ -3,6 +3,7 @@
 #include "memlayout.h"
 #include "riscv.h"
 #include "defs.h"
+#include "peterson_lock.h"
 
 volatile static int started = 0;
 
@@ -40,6 +41,6 @@ main()
     trapinithart();   // install kernel trap vector
     plicinithart();   // ask PLIC for device interrupts
   }
-
+  peterson_init(); // inizialized the updated petersonlocks array
   scheduler();        
 }
