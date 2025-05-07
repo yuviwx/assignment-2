@@ -2,8 +2,8 @@
 #define  _PETERSON_LOCK_H
 // Peterson lock structure
 typedef struct  {
-  int flags[2];      // Interest flags for each process
-  int turn;          // Whose turn is it to wait
+  int flags[2];         // Interest flags for each process
+  int turn;             // Whose turn is it to wait
   int active;
 } PetersonLock;
 

@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Number of times each process will try to acquire the lock
-    int iterations = 3;
+    int iterations = 1;
     
     for (int i = 0; i < iterations; i++) {
         // Try to acquire the tournament lock
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
                i+1, getpid(), id);
         
         // Sleep a bit to demonstrate mutual exclusion
-        sleep(1);
+        sleep(3);
 
         // Release the lock
         if (tournament_release() < 0) {
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
         }
         
         // Wait a moment before trying again to give other processes a chance
-        sleep(1);
+        sleep(5);
     }
 
     // If this is the parent process (id 0), wait for all children
