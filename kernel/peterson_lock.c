@@ -42,7 +42,7 @@ int peterson_acquire(int lock_id, int role){
     
     // Lock the lock..
     __sync_synchronize();
-    __sync_lock_test_and_set(&petersonLocks[lock_id].flags[role], 1);
+    petersonLocks[lock_id].flags[role] = 1;
     __sync_lock_test_and_set(&petersonLocks[lock_id].turn, role);
     __sync_synchronize();
 
